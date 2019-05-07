@@ -21,6 +21,7 @@ mkdir -p $target
 cp $input $target/$file
 
 echo Linking $target to $latest
-cp -r $target/ $latest
+mkdir -p $latest
+cp -r $target/$file $latest/$file
 # cp ./img/thumbnail.psi $latest/$name.psi
 
