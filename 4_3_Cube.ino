@@ -10,12 +10,7 @@ public:
 
 bool Cube::draw() {
   if( lastSelection  != selection || changed ) {
-    pocketstar.drawRect( 0, 0, WIDTH, HEIGHT, true, BLACK_16b );
-    pocketstar.drawRect(
-      drawLocations[ lastSelection ][0] - 1,
-      drawLocations[ lastSelection ][1] - 1,
-      19, 19, true, BLACK_16b );
- 
+    pocketstar.drawRect( 0, 0, WIDTH, HEIGHT, true, BLACK_16b ); 
     pocketstar.drawRect(
       drawLocations[ selection ][0] - 1,
       drawLocations[ selection ][1] - 1,

@@ -14,22 +14,21 @@ void update( float timeDiff ) {
     cube.rotate( cube.selection, directions::counterClockWise );
   }
 
-  // selected face:   (-> ... means repeat sequence)
-  // up/down      
-  //   center -> top -> bottom -> ...
 
   if( cube.selection == faces::left || cube.selection == faces::front || cube.selection == faces::right || cube.selection == faces::back ) {
+    // selected face:   (-> ... means repeat sequence)
+    // up/down      
+    //   center -> top -> bottom -> ...
     if( input.get( buttons::up ) ) {
       setSelection( faces::top );
     } else if( input.get( buttons::down ) ) {
       setSelection( faces::bottom );
     }
-    
-  // right/left
-  //   top -> ... (ignore)
-  //   left -> front -> right -> back -> ...
-  //   bottom -> ... (ignore)
 
+    // right/left
+    //   top -> ... (ignore)
+    //   left -> front -> right -> back -> ...
+    //   bottom -> ... (ignore)
     else if( cube.selection == faces::front ) {
       if( input.get( buttons::right ) ) {
         setSelection( faces::right );

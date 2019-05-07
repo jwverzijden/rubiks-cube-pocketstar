@@ -1,4 +1,3 @@
-
 class Buttons {
   float debounceTimes[6];
   float time;

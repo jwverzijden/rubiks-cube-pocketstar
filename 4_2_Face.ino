@@ -1,4 +1,3 @@
-
 class Face {
   u8 face;
   u8 slots[3][3];
