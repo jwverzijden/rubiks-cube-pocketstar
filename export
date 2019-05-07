@@ -10,15 +10,16 @@ version=$1
 name=${PWD##*/}
 input=./$name.ino.pocketstar.bin
 outdir=./Release
-outfile=$name.bin
+file=$name.bin
 
-target=$outdir/$version/$outfile
-echo moving $input to $target
-mkdir -p $outdir/$version 
-cp $input $target
-
+target=$outdir/$version
 latest=$outdir/latest
+echo moving $input to $target
+mkdir -p $target/$file
+cp $input $target/$file
+
 echo Linking $target to $latest
-rm $latest 
-ln -sr $target $latest
+rm -rf $latest 
+cp -r $target $latest
+cp ./img/thumbnail.psi $latest/$name.psi
 

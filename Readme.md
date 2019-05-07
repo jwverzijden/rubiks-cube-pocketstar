@@ -2,13 +2,13 @@
 A cube puzzle implementation for the PocketStar.
 
 ## How to install
-Download the repository, either clone or unzip the files.
+Clone or download the zip and locate the ./Release directory.
 
-Copy the contents from ./Release/VERSION/ to your pocketstar SD card.
+Copy the contents from ./Release/latest to your pocketstar SD card.
 
 Place it in the apps or games directory under a new directory named rubiks-cube.
 
-./Release/latest is a symlink to the last exported release.
+./Release/latest is a copy of the last exported release including a thumbnail, other releases can be found under the corresponding version in the ./Release directory.
 
 ## How to play
 ### Basics
@@ -25,9 +25,9 @@ Press random buttons. There really is no other way.
 
 
 ## Todo
+ - Thumbnail
  - Game menu on pause button
    - New game option
    - Exit option
  - Better selection
    - Circle and lines to show which face and or rows are moved
-
