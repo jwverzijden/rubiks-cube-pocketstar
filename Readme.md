@@ -3,7 +3,9 @@ A cube puzzle implementation for the PocketStar.
 
 ## How to install
 Download the repository, either clone or unzip the files.
-Copy the contents from ./Release/latest to your pocketstar SD card.
+Copy the contents from ./Release/VERSION/ to your pocketstar SD card.
+Place it in the apps or games directory under a new directory named rubiks-cube.
+./Release/latest is a symlink to the last exported release.
 
 ## How to play
 ### Basics
