@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+
+if [ "$#" -ne 1 ]; then
+	echo "Usage: $0 VERSION"
+fi
+
+version=$1
+name=${PWD##*/}
+input=./$name.ino.pocketstar.bin
+outdir=./Release
+outfile=$name.bin
+
+target=$outdir/$version/$outfile
+echo moving $input to $target
+mkdir -p $outdir/$version 
+cp $input $target
+
+latest=$outdir/latest
+echo Linking $target to $latest
+rm $latest 
+ln -sr $target $latest
+
