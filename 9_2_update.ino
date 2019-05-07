@@ -1,4 +1,9 @@
 
+
+void setSelection( u8 selection ){
+  cube.lastSelection = cube.selection;
+  cube.selection = selection;
+};
 void update( float timeDiff ) {
  
   input.update( timeDiff );
@@ -15,11 +20,9 @@ void update( float timeDiff ) {
 
   if( cube.selection == faces::left || cube.selection == faces::front || cube.selection == faces::right || cube.selection == faces::back ) {
     if( input.get( buttons::up ) ) {
-      cube.lastSelection = cube.selection;
-      cube.selection = faces::top;
+      setSelection( faces::top );
     } else if( input.get( buttons::down ) ) {
-      cube.lastSelection = cube.selection;
-      cube.selection = faces::bottom;
+      setSelection( faces::bottom );
     }
     
   // right/left
@@ -29,57 +32,55 @@ void update( float timeDiff ) {
 
     else if( cube.selection == faces::front ) {
       if( input.get( buttons::right ) ) {
-        cube.lastSelection = cube.selection;
-        cube.selection = faces::right;
+        setSelection( faces::right );
       } else if( input.get( buttons::left ) ) {
-        cube.lastSelection = cube.selection;
-        cube.selection = faces::left;
+        setSelection( faces::left );
       }
     }
     else if( cube.selection == faces::right ) {
       if( input.get( buttons::right ) ) {
-        cube.lastSelection = cube.selection;
-        cube.selection = faces::back;
+        setSelection( faces::back );
       } else if( input.get( buttons::left ) ) {
-        cube.lastSelection = cube.selection;
-        cube.selection = faces::front;
+        setSelection( faces::front );
       }
     }
     else if( cube.selection == faces::back ) {
       if( input.get( buttons::right ) ) {
-        cube.lastSelection = cube.selection;
-        cube.selection = faces::left;
+        setSelection( faces::left );
       } else if( input.get( buttons::left ) ) {
-        cube.lastSelection = cube.selection;
-        cube.selection = faces::right;
+        setSelection( faces::right );
       }
     }
     else if( cube.selection == faces::left ) {
       if( input.get( buttons::right ) ) {
-        cube.lastSelection = cube.selection;
-        cube.selection = faces::front;
+        setSelection( faces::front );
       } else if( input.get( buttons::left ) ) {
-        cube.lastSelection = cube.selection;
-        cube.selection = faces::back;
+        setSelection( faces::back );
       }
     }
   }
   else if( cube.selection == faces::top ) {
     if( input.get( buttons::up ) ) {
-      cube.lastSelection = cube.selection;
-      cube.selection = faces::bottom;
+      setSelection( faces::bottom );
     } else if( input.get( buttons::down ) ) {
-      cube.lastSelection = cube.selection;
-      cube.selection = faces::front;
+      setSelection( faces::front );
+    }
+    if( input.get( buttons::right ) ) {
+      setSelection( faces::right );
+    } else if( input.get( buttons::left ) ) {
+      setSelection( faces::left );
     }
   }
   else if( cube.selection == faces::bottom ) {
     if( input.get( buttons::up ) ) {
-      cube.lastSelection = cube.selection;
-      cube.selection = faces::front;
+      setSelection( faces::front );
     } else if( input.get( buttons::down ) ) {
-      cube.lastSelection = cube.selection;
-      cube.selection = faces::top;
+      setSelection( faces::top );
+    }
+    if( input.get( buttons::right ) ) {
+      setSelection( faces::right );
+    } else if( input.get( buttons::left ) ) {
+      setSelection( faces::left );
     }
   }
 
