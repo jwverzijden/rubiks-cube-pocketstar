@@ -7,7 +7,14 @@ void initialize() {
 
 
 boolean pause() {
-  return true;
+  if( optionsMenu.exitOption ) {
+    optionsMenu.exitOption = false;
+    return true;
+  }
+  pocketstar.drawRect( 0, 0, WIDTH, HEIGHT, true, BLACK_16b );
+  optionsMenu.setSelection( menu::resumeGame );
+  optionsMenu.visible = true;
+  return false;
 }
 
 void resume() {
