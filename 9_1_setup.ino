@@ -1,7 +1,4 @@
 
-Cube cube;
-Buttons input;
-
 void initialize() {
   pocketstar.setBitDepth(BitDepth16);
   pocketstar.setColorMode(ColorModeRGB);

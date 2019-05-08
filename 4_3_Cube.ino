@@ -2,15 +2,17 @@ class Cube {
   bool changed = true;
   Face sides[6] = { Face(0), Face(1), Face(2), Face(3), Face(4), Face(5) };
 public:
+  Cube();
   u8 selection = faces::front;
   u8 lastSelection  = faces::front;
   bool draw();
   void rotate( u8 face, u8 direction );
 };
 
+Cube::Cube(){};
 bool Cube::draw() {
   if( lastSelection  != selection || changed ) {
-    pocketstar.drawRect( 0, 0, WIDTH, HEIGHT, true, BLACK_16b ); 
+    pocketstar.drawRect( 0, 0, WIDTH, HEIGHT, true, BLACK_16b );
     pocketstar.drawRect(
       drawLocations[ selection ][0] - 1,
       drawLocations[ selection ][1] - 1,
@@ -125,3 +127,5 @@ void Cube::rotate( u8 face, u8 direction ){
       break;
   }
 };
+
+Cube cube;

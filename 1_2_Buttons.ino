@@ -16,7 +16,7 @@ void Buttons::update( float timeDiff ){
   value[buttons::a]     = false;
   value[buttons::b]     = false;
 
-  uint8_t btns = pocketstar.getButtons();
+  u8 btns = pocketstar.getButtons();
   if( btns & ButtonUp && time > debounceTimes[buttons::up] ){
     debounceTimes[buttons::up] = time + DEBOUNCE_UP;
     value[buttons::up] = true;
@@ -54,3 +54,6 @@ bool Buttons::get( u8 button ){
     default:             return false;
   }
 };
+
+
+Buttons input;
