@@ -163,6 +163,7 @@ void Menu::update(){
   if( input.get(buttons::a) && !exitOption ){
     if( selection == menu::resumeGame) {
       visible = false;
+      cube.changed = true;
     } else if( selection == menu::newGame) {
       cube = Cube();
       visible = false;

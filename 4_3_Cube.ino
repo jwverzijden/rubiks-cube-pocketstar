@@ -1,7 +1,7 @@
 class Cube {
-  bool changed = true;
   Face sides[6] = { Face(0), Face(1), Face(2), Face(3), Face(4), Face(5) };
 public:
+  bool changed = true;
   Cube();
   u8 selection = faces::front;
   u8 lastSelection  = faces::front;
