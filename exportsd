@@ -1,0 +1,33 @@
+#!/bin/bash
+
+set -e
+
+if [ "$#" -ne 1 ]; then
+	echo "Usage: $0 SD_MOUNT_PATH"
+	exit 1
+fi
+
+mntpath=$1
+name=${PWD##*/}
+indir=./Release/latest
+file=$name.bin
+
+src=$indir/$file
+targetdir=$mntpath/games/$name
+target=$targetdir/$file
+
+
+echo attempting mount of sd card at $mntpath
+if [ ! -d $mntpath ]; then
+	sudo mkdir -p $mntpath;
+fi
+sudo mount -t drvfs D: $mntpath
+
+echo moving $src to $target
+mkdir -p $targetdir
+cp $src $target
+# cp $indir/thumbnail.psi $targetdir/$name.psi
+
+sudo umount $mntpath
+sudo $mntpath
+

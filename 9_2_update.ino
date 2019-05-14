@@ -105,7 +105,6 @@ void update( float timeDiff ) {
     if( optionsMenu.showBattery ){
       drawBatteryStatus();
     }
-
   }
 
 };

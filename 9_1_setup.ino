@@ -7,8 +7,7 @@ void initialize() {
 
 
 boolean pause() {
-  if( optionsMenu.exitOption ) {
-    optionsMenu.exitOption = false;
+  if( optionsMenu.visible ) {
     return true;
   }
   pocketstar.drawRect( 0, 0, WIDTH, HEIGHT, true, BLACK_16b );

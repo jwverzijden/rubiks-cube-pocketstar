@@ -9,6 +9,8 @@
 #define u16 uint16_t
 
 
+typedef void (* Callback) ();
+
 namespace buttons {
   enum buttons {
     up, down, right, left,
