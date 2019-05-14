@@ -24,8 +24,5 @@ Press random buttons. There really is no other way.
 
 ## Todo
  - Thumbnail
- - Game menu on pause button
-   - New game option
-   - Exit option
  - Better selection
    - Circle and lines to show which face and or rows are moved
